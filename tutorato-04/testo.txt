@@ -1,0 +1,129 @@
+VERIFICA AUTOMATICA
+===================
+
+L'esecuzione manuale del programma per verificarne la correttezza è
+una procedura comune, ma spesso inaffidabile.  L'utilizzo di strumenti
+per la verifica automatica consente una scrittura rapida dei programmi
+ed una riduzione sistematica del numero di bachi.
+
+In questa esercitazione (e in quelle successive) si farà uso del
+programma `pvcheck' per l'esecuzione automatica di una sequenza di
+test predefiniti.  Il software esegue il programma in esame e
+confronta i valori che produce con quelli corretti.  Eventuali errori
+sono stampati a video.  Pvcheck, che è disponibile gratuitamente
+all'indirizzo https://github.com/claudio-unipv/pvcheck, richiede
+il linguaggio Python (versione 3.4 o superiore) che solitamente si
+trova già installato nei sistemi Linux e che può essere incluso in
+Cygwin tramite il suo programma di installazione.
+
+Per poter utilizzare pvcheck occorre disporre dei dati, opportunamente
+codificati, relativi ai test da condurre.  Tali dati verranno messi a
+disposizione insieme con il testo degli esercizi sotto forma di file
+con l'estensione .test .  Per poter effettuare la verifica è necessario
+che l'output del programma da verificare sia formattato secondo le
+modalità previste dai casi di test.  Di solito è sufficiente far
+precedere ciascun risultato da un opportuno marcatore, racchiuso tra
+parentesi quadre.
+
+
+1) Mediana
+----------
+
+Si scriva un programma che legga tre valori interi e che ne stampi la
+mediana (cioè il valore che occuperebbe la seconda posizione se
+ordinassimo i tre numeri).  La stampa del risultato dovrà essere
+preceduta da uno specifico marcatore [MEDIANA] scritto tra
+parentesi quadre.  Ad esempio, a fronte della sequenza di input 30,
+10, 20 il programma dovrà stampare le righe:
+
+[MEDIANA]
+20
+
+Si compili il programma con il comando
+
+  gcc -Wall -o mediana mediana.c
+
+e lo si esegua per verificarne la correttezza (l'opzione -Wall abilita
+l'output, da parte del compilatore, di messaggi di avvertimento che
+segnalano situazioni insolite, che potrebbero corrispondere ad errori
+di programmazione).
+
+
+1.1) Verifica automatica
+------------------------
+
+I casi di test sono descritti nei file `pvcheck.test'.  Si verifichi
+la correttezza del programma scritto precedentemente tramite il
+comando
+
+./pvcheck ./mediana
+
+e si osservi l'output del programma.  Se è il caso, si corregga il
+programma finché non fornisce la risposta corretta.
+
+
+2) Calcolo di potenze
+---------------------
+
+Il `metodo del contadino russo' è un procedimento efficiente per
+il calcolo della potenza "a alla b".  Il metodo consiste nella ripetizione
+di un passo in cui si calcola il quadrato della base a e si dimezza
+l'esponente b (arrotondando il risultato per difetto) fino a che non
+si annulla.  Il risultato finale si ottiene considerando le basi che
+corrispondono ad esponenti dispari ed effettuandone il prodotto.  Ad
+esempio, si supponga di voler calcolare la potenza 3 alla 12, i passi
+dell'algoritmo determinerebbero la sequenza di valori:
+
+           a  b
+-------------------
+           3 12
+           9  6
+          81  3 (*)
+        6561  1 (*)
+    43046721  0
+-------------------
+
+quindi, moltiplicando i due valori 81 e 6561 corrispondenti agli
+esponenti dispari 3 e 1 si ottiene il risultato
+
+3^12 = 81 * 6561 = 531441.
+
+Si scriva un programma in linguaggio C che legga da terminale la base
+a, anche non intera, e l'esponente intero b e che calcoli la potenza
+"a alla b" utilizzando il metodo appena descritto.  Per gestire
+correttamente anche gli esponenti interi negativi si sfrutti la
+relazione "a^b = (1/a)^(-b)".  Nel caso in cui la potenza non sia
+definita (ad esempio nel caso a = 0, b = -1), il programma dovrà
+stampare la frase "non calcolabile" al posto del risultato.
+
+La stampa del risultato dovrà essere preceduta da uno specifico
+marcatore [POTENZA] scritto tra parentesi quadre.  Ad
+esempio, a fronte della sequenza di input  2.5 3   il programma
+dovrà stampare le righe:
+
+[POTENZA]
+15.625
+
+Si compili il programma con il comando
+
+  gcc -Wall -o potenza potenza.c
+
+e lo si esegua per verificarne la correttezza.
+
+  ./potenza
+
+
+
+2.1 Verifica automatica
+-----------------------
+
+I casi di test sono descritti nei file `potenza.test'.  Si verifichi
+la correttezza del programma scritto precedentemente tramite il
+comando
+
+  ./pvcheck -f potenza.test ./potenza
+
+Si corregga il programma finché non fornisce la risposta corretta.
+
+Si noti che l'opzione `-f potenza.test' è necessaria in quanto il nome
+del file differisce da quello predefinito `pvcheck.test'.

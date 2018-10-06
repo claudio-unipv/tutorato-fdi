@@ -1,0 +1,35 @@
+VARIABILI ED ESPRESSIONI
+========================
+
+Tra gli applicativi informatici più diffusi vi sono quelli che
+elaborano informazioni di tipo economico.  Gli esercizi che seguono
+richiedono la manipolazione di questo tipo di informazione.
+
+1) Conversione tra valute
+-------------------------
+
+Un Euro vale 1.18213 dollari (Ottobre 2017).  Si scriva un programma
+che effettui la conversione Euro/Dollaro.  Il programma dovrà
+dichiarare almeno due variabili per memorizzare gli importi in euro e
+in dollari e un'espressione che esegue la conversione.  Gli importi
+nelle due valute dovranno essere stampati a terminale.
+
+
+2) Calcolo di resti
+-------------------
+
+Si supponga di dover pagare un certo importo in euro (intero, senza
+centesimi) utilizzando banconote da 50 euro, 20 euro, 10 euro e
+5 euro, e monete da 2 euro e da un euro.  Si scriva un programma
+che determini quante monete e banconote di ciascun tipo bisogna
+utilizzare se si vuole massimizzare il numero di banconote di taglio
+maggiore.  Ad esempio, dato l'importo di 123 euro il programma
+dovrà stampare:
+
+Importo totale: 123 euro
+2 banconote da 50 euro
+1 banconote da 20 euro
+0 banconote da 10 euro
+0 banconote da 5 euro
+1 monete da 2 euro
+1 monete da 1 euro

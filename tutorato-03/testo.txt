@@ -1,0 +1,76 @@
+PROGETTAZIONE DI ALGORITMI ELEMENTARI
+=====================================
+
+Gli esercizi seguenti richiedono di progettare ed implementare
+algoritmi per la risoluzione di semplici problemi.  La loro
+risoluzione richiede di:
+ - individuare la strategia su cui si baserà l'algoritmo risolutivo;
+ - specificare l'algoritmo tramite un diagramma di flusso;
+ - scrivere un programma C che implementi l'algoritmo;
+ - verificare la correttezza del programma eseguendolo su alcune
+  istanze del problema.
+
+
+1) Potenza
+----------
+
+Progettare ed implementare un programma che legga due numeri interi
+a e b e che calcoli e stampi il risultato di "a elevato alla b".
+
+
+2) Massimo
+----------
+
+Progettare ed implementare un programma che effettui la lettura di
+una serie di numeri interi.  Il programma termina quando il dato
+immesso è pari a zero.  Calcolare e stampare il maggiore tra i
+valori inseriti.
+
+
+3) Media
+--------
+
+Progettare ed implementare un programma che effettui la lettura di una
+serie di numeri reali.  Il programma termina quando il dato immesso è
+pari a zero.  Calcolare e stampare la media aritmetica dei valori
+inseriti.
+
+
+4) Conteggio
+------------
+
+Progettare ed implementare un programma che effettui la lettura di una
+serie di numeri interi.  Il programma conta il numero di valori
+dispari immessi, e termina quando il conteggio arriva a 10.  Al
+termine deve essere stampato il numero di operazioni di lettura
+effettuate.
+
+
+5) Radice quadrata
+------------------
+
+Il metodo più antico per l'approssimazione della radice quadrata è il
+`metodo babilonese'.  Il metodo è di tipo iterativo, prevede cioè che
+vengano ripetute determinate operazioni.  Ciascuna ripetizione
+modifica una stima della soluzione in modo che diventi
+progressivamente più accurata.
+
+Dato un valore positivo z, l'approssimazione della sua radice quadrata inizia
+con una sua stima grossolana x.  Ad esempio, si può partire con
+il valore x = 1.  La stima x viene poi sostituita da una stima
+migliore, ottenuta calcolando l'espressione:
+
+  (x + z/x) / 2
+
+Il miglioramento della soluzione viene ripetuto finché non si giunge
+ad una stima abbastanza accurata, ad esempio fino a quando il valore
+assoluto della differenza tra il quadrato di x e z non scende sotto
+una certa soglia.
+
+Si descriva tramite un diagramma di flusso il metodo babilonese in
+modo che parta da una stima iniziale x = 1 e che continui a migliorare
+la stima fino a che non si verifichi la condizione
+
+"il valore assoluto della differnza tra x al quadrato e z è inferiore a 0.0001".
+
+Si traduca infine il diagramma in linguaggio C.

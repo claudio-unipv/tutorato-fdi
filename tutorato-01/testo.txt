@@ -1,0 +1,32 @@
+HELLO WORLD
+===========
+
+Si usi un editor di testo per modificare il file 'hello.c'.
+
+In laboratorio si può usare il programma gedit invocandolo da terminale
+con il comando:
+
+  gedit hello.c &
+
+Il carattere & in coda al comando evita che la shell rimanga bloccata
+nell'esecuzione del comando e fa quindi in modo che si possano inviare
+altri comandi mentre l'editor rimane aperto.
+
+Si includano nel file 'hello.c' le seguenti linee:
+
+#include <stdio.h>
+
+int main()
+{
+  puts("Hello world!");
+}
+
+
+Dopo aver salvato il listato si usi il comando gcc per compilare il
+programma:
+
+  gcc -o hello hello.c 
+
+Infine, si esegua il programma con il comando
+
+  ./hello
