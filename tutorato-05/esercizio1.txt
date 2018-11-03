@@ -1,0 +1,54 @@
+FUNZIONI
+========
+
+Se si lancia una moneta, la probabilità che esca testa è pari a 1/2
+(cioè al 50%).  Se si lancia un generico numero n di monete, la
+probabilità P(n, k) che escano esattamente k teste è data
+dall'espressione seguente:
+
+  P(n, k) = 1 / (2^n) (n su k),
+
+dove (n su k) indica "coefficiente binomiale", definito come
+
+  (n su k) = n! / (k! (n - k)!)
+
+           = (1 * 2 * ... n) / ((1 * 2 * ... * k) * (1 * 2  * ... * (n - k)))
+
+
+Calcolo di P(n, k)
+------------------
+
+Vogliamo realizzare un programma che, letti n e k da terminale,
+calcoli la probabilità P(n, k).  Il programma sarà organizzato in
+funzioni.  Più precisamente, dovrà includere le seguenti:
+
+- potenza, che dati gli interi a e b calcola a elevato alla b;
+- fattoriale, che dato n calcola n!;
+- coefficiente_binomiale, che dati n e k calcola (n su k);
+- calcola_probabilita, che dati n e k calcola P(n, k).
+
+La funzione main utilizzerà la funzione di libreria scanf per leggere
+da terminale i valori di n e k.  Quindi dovrà stampare il coefficiente
+binomiale (n su k) e la probabilità P(n, k) secondo il formato
+seguente:
+
+[COEFFICIENTE_BINOMIALE]
+<risultato>
+
+[PROBABILITA]
+<risultato>
+
+
+Ad esempio, nel caso n = 1, k = 1 dovrà stampare le righe:
+
+[COEFFICIENTE_BINOMIALE]
+1
+
+[PROBABILITA]
+0.5
+
+
+Assumendo di aver compilato il programma con il nome "monete", la sua
+correttezza è verificabile con il comando
+
+  ./pvcheck ./monete

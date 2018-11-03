@@ -1,0 +1,63 @@
+FUNZIONI
+========
+
+
+Stima di P(n, k)
+----------------
+
+Un modo alternativo per ottenere P(n, k) consiste nella sua stima
+tramite la simulazione del lancio delle monete.  Il lancio di una
+singola moneta è simulabile utilizzando la funzione di libreria rand,
+che restituisce un numero intero "pseudocasuale".  A seconda che tale
+numero risulti pari o dispari, consideriamo l'esito come `testa' o
+`croce':
+
+  /* ... */
+  if (rand() % 2 == 0)
+    return 1;  /* testa */
+  else
+    return 0;  /* croce */
+  /* ... */
+
+Diventa quindi possibile definire la funzione 'simula_lanci_multipli'
+che dato n usa la funzione 'simula_lancio' per simulare il lancio di n
+monete restituendo al chiamante il numero di teste ottenuto.  Una
+singola simulazione non è sufficiente per stimare P(n, k): occorrono
+simulazioni multiple.  La stima finale può essere ottenuta tramite la
+definizione della funzione 'stima_probabilita' che dati n, k, ed un
+numero di ripetizioni r stima la probabilità P(n, k).  La stima viene
+calcolata effettuando r simulazioni di lancio e contando in quante di
+queste l'esito consiste esattamente in $k$ teste.
+
+  P(n, k) = (Numero di lanci in cui sono uscite k teste) / r.
+
+Per ottenere numeri realmente casuali occorre inizializzare il "seme"
+del generatore tramite la funzione srand.  Solitamente ciò viene fatto
+all'inizio della funzione main, utilizzando la funzione time (in
+questo modo, poiché ogni esecuzione patirà in istanti distinti, le
+sequenze di numeri generati saranno diverse):
+
+  int main()
+  {
+    srand(time(NULL));
+    ...
+
+Per poter utilizzare queste funzioni occorre inserire in testa al
+programma le direttive:
+
+  #include <stdlib.h>   /* definisce rand e srand */
+  #include <time.h>     /* definisce time */
+
+Il programma dovrà stampare la stima calcolata effettuando r = 100000
+simulazioni, preceduta dal marcatore [STIMA].  Per verificarne la
+correttezza si può eseguire il comando (supponendo di aver chimato il
+file `stima'):
+
+  ./pvcheck -f stima.test ./stima
+
+Attenzione: per via della componente casuale del programma, alcuni
+test potrebbero fallire anche se il programma è corretto.  In tal
+caso, lo scostamento tra valore atteso e valore calcolato dovrebbe
+essere minimo.  Questo inconveniente può essere ridotto aumentando il
+numero r di ripetizioni.
+
