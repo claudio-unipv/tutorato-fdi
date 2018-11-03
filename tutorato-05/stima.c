@@ -68,7 +68,7 @@ double stima_probabilita(int n, int k, int r)
   
   /* Il cast e` necessario per evitare il troncamento nella
      divisione. */
-  return ((double)c) / r;
+  return ((double)contatore) / r;
 }
 
 
