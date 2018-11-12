@@ -1,0 +1,70 @@
+Array multidimensionali
+=======================
+
+Il Tic-Tac-Toe-Tomek è un gioco che si svolge su una griglia quadrata
+di 4x4 caselle.  A inizio gioco tutte le caselle tranne una sono
+vuote.  La casella non vuota contiene il simbolo `T'.  Ci sono due
+giocatori, caratterizzati dai simboli `X' e `O', che si alternano nei
+turni, a partire dal giocatore `X'.  In ogni turno, un giocatore mette
+il suo simbolo in uno delle caselle ancora vuote.
+
+Dopo il turno di un giocatore, se c'è una fila orizzontale, verticale
+o diagonale contenente 4 simboli uguali, oppure 3 simboli uguali e un
+simbolo `T', il giocatore corrispondente vince il gioco, e il gioco
+finisce.  In caso contrario, il gioco continua, e il turno passa
+all'altro giocatore.  Se l'intera griglia di gioco è riempita di
+simboli, e nessuno ha vinto, il gioco finisce in un pareggio.
+
+Data una griglia, il gioco può trovarsi in quattro possibili stati:
+- "X ha vinto" (gioco finito, X ha vinto);
+- "O ha vinto" (gioco finito, O ha vinto);
+- "Pari" (gioco finito in pareggio);
+- "Gioco non ultimato" (il gioco non è ancora finito).
+
+Un esempio per ciascuno dei quattro stati è rappresentato qui sotto:
+
+..O.              XXXO              XOXT              .O.O
+XXXT              XTOX              XXOO              X..T
+....              OOXX              OXOX              X...
+.O..              OO.O              XXOO              X.O.
+
+Vittoria di X     Vittoria di O     Pareggio          Gioco incompleto
+
+
+Si scriva un programma C che legga da terminale una griglia di gioco e
+che determini in quale dei quattro stati possibili si trova.  La
+griglia sarà rappresentata da quattro righe, ciascuna contenente
+quattro caratteri scelti tra 'X', 'O', 'T' oppure '.' (il punto indica
+una cella libera).
+
+L'output del programma dovrà essere un carattere che rappresenta lo
+stato del gioco: 'X' oppure 'O' quando uno dei due giocatori ha vinto,
+'=' in caso di pareggio e '?' in caso di partita non ancora conclusa.
+La risposta del programma dovrà essere preceduta dal marcatore
+[RISULTATO].  Ad esempio, a fronte dell'input:
+
+XXXO
+XTOX
+OOXX
+OO.O
+
+il programma dovrà stampare a video il messaggio:
+
+[RISULTATO]
+O
+
+Per leggere le griglie è possibile utilizzare la funzione scanf,
+indicando il marcatore " %c" che consente di leggere un singolo
+carattere.  In tal caso occorrerà però prestare attenzione ad un
+dettaglio: a differenza di quanto avviene nella lettura di altri tipi
+di dato, i caratteri di spaziatura non vengono saltati.  Per ignorarli
+occorre includere uno spazio prima del marcatore, come nell'esempio
+seguente:
+
+   char carattere;
+   scanf(" %c", &carattere);
+
+Per verificare la correttezza del programma scritto, si può
+utilizzare il comando:
+
+./pvcheck ./tictactoe
