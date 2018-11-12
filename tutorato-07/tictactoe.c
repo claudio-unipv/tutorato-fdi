@@ -70,8 +70,8 @@ char controlla_orizzontali(char griglia[][4])
 }
 
 
-/* COMPLETA IL PROGRAMMA CON LE FUNZIONI 'controlla_verticali' e
-   'controlla_diagonali'. */
+/* COMPLETA IL PROGRAMMA CON LE FUNZIONI 'controlla_verticali',
+   'controlla_diagonali' e 'controlla_piena'. */
 
 
 /* Determina il risultato della partita. */
