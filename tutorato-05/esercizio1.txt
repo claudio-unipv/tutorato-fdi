@@ -6,7 +6,7 @@ Se si lancia una moneta, la probabilità che esca testa è pari a 1/2
 probabilità P(n, k) che escano esattamente k teste è data
 dall'espressione seguente:
 
-  P(n, k) = 1 / (2^n) (n su k),
+  P(n, k) = (n su k) / (2^n),
 
 dove (n su k) indica "coefficiente binomiale", definito come
 
