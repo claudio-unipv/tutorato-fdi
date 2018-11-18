@@ -43,70 +43,9 @@
    utilizzando la chiave data. */
 void codifica_messaggio(char *messaggio, int chiave)
 {
-  /* Completa la funzione */
+  /* COMPLETA LA FUNZIONE */
 }
 
-
-/* Memorizza in h[0]...h[25] il numero di occorrenze di
-   ciascuna lettera dell'alfabeto inglese. */
-void calcola_occorrenze(char *messaggio, int *h)
-{
-  int i = 0;
-  char c;
-
-  /* Azzeramento dell'array */
-  for (i = 0; i < 26; i++)
-    h[i] = 0;
-
-  i = 0;
-  while (messaggio[i] != '\0') {
-    c = messaggio[i];
-    /* Solo le lettere vanno contate */
-    if (isalpha(c))
-      /* Tratta maiuscole e minuscole allo stesso modo */
-      h[toupper(c) - 'A']++;
-    i++;
-  }
-}
-
-/* Calcola l'indice dell'elemento massimo in v[0]...v[n-1] 
- */
-int indice_massimo(int *v, int n)
-{
-  int i;
-  int m = 0;
-  for (i = 1; i < n; i++)
-    if (v[i] > v[m])
-      m = i;
-  return m;
-}
-
-/* Decifra il messaggio tramite un'analisi delle
-   occorrenze delle lettere.  La funzione restituisce la
-   chiave di cifratura. */
-int decifra_messaggio(char *messaggio)
-{
-  int occorrenze[26];
-  int i;
-  int amax;
-  int chiave;
-
-  calcola_occorrenze(messaggio, occorrenze);
-
-  for (i = 0; i < 26; i++)
-    printf("%c %d\n", i + 'A', occorrenze[i]);
-
-  amax = indice_massimo(occorrenze, 26);
-  /* Si determina la chiave assumendo che 'E' sia la
-     lettere piu` frequente nel messaggio originale */
-  chiave = amax - ('E' - 'A');
-
-  /* Si decifra il messaggio usando l'opposto della
-     chiave */
-  codifica_messaggio(messaggio, -chiave);
-
-  return chiave;
-}
 
 /* Legge il messaggio inserito da terminale e lo memorizza 
    nella stringa `messaggio'.  */
