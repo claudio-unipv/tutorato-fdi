@@ -1,0 +1,135 @@
+STRUTTURE
+=========
+
+La "battaglia navale" è un gioco di carta e matita estremamente
+popolare e diffuso in tutto il mondo.  Il gioco consiste nel cercare
+di indovinare la posizione delle navi avversarie per poterle colpire
+ed affondare.  Nella variante qui considerata le navi consistono in
+rettangoli con i lati paralleli agli assi di un sistema di riferimento
+cartesiano e sono pertanto rappresentabili dalle coordinate dei due
+punti p1 = (x1, y1) e p2 = (x2, y2) sulla diagonale (con x1 <= x2 e y1
+<= y2).
+
+  y ^
+    |
+    |    +--------------+ p2
+    |    |              |
+    |    |              |
+    | p1 +--------------+
+    |
+  --+--------------------------->
+    |                          x
+
+
+A differenza della versione classica, le coordinate che determinano la
+posizione delle navi non devono necessariamente essere composte da
+numeri interi.
+
+Il gioco è diviso in due fasi, idealmente eseguite da due giocatori
+distinti.  Nella prima fase vengono posizionate un certo numero di
+navi (3) indicando le loro coordinate nel piano cartesiano.
+
+Nella seconda fase, viene specificata la sequenza di coordinate dei
+punti da colpire e si determinano quante e quali navi sono state
+affondate.  Sono ammessi 5 tentativi.
+
+
+Primo esercizio: posizionamento delle navi
+------------------------------------------
+
+Nella prima fase le coordinate dei punti che indicano la posizione
+delle navi vengono lette da terminale.  Ciascuna delle tre righe da
+leggere contiene le quattro coordinate x1, y1, x2, y2 che definiscono
+i punti p1 e p2 (una riga per ciascuna delle tre navi).
+
+I dati letti dovranno essere memorizzati in un'opportuna struttura
+dati.  Ad esempio i dati relativi ad un singolo punto potrebbero
+essere memorizzati in variabili del tipo definito dalla seguente
+struttura C:
+
+  struct punto
+  {
+    double x;
+    double y;
+  };
+
+In modo analogo, conviene definire una struttura da utilizzare per la
+memorizzazione dei rettangoli che rappresentano le navi.  Il gioco
+richiede che valgano le relazioni x1 <= x2 e y1 <= y2.  Nel caso in
+cui le coordinate venissero immesse in un ordine non conforme, il
+programma dovrà riordinarle in modo corretto prima di memorizzarle.
+
+Dopo aver letto (ed eventualmente corretto) le coordinate delle navi,
+il programma le dovrà stampare a terminale nel formato:
+
+[FLOTTA]
+x1 y1 x2 y2
+x1 y1 x2 y2
+x1 y1 x2 y2
+
+in questo modo sarà possibile verificare la correttezza della
+lettura tramite il comando:
+
+./pvcheck ./battaglia
+
+
+Secondo esercizio: esecuzione dei colpi
+---------------------------------------
+
+Nella seconda fase vengono lette da terminale le coordinate x, y dei
+cinque colpi che vengono sparati (un colpo per riga).  Il programma
+dovrà quindi verificare quali navi sono state colpite (e quindi
+affondate).  Più precisamente, per ciascun colpo bisognerà determinare
+se ha colpito una nave oppure no e quindi stampare le "COLPITO" oppure
+"MANCATO" dopo il marcatore "[COLPI]".  Ad esempio, un risultato
+formattato correttemente potrebbe essere:
+
+[COLPI]
+MANCATO
+COLPITO
+COLPITO
+MANCATO
+COLPITO
+
+Attenzione al fatto che non si può colpire una nave che è già stata
+affondata in precedenza.
+
+Per determinare se una nave viene colpita occorrerà definire una
+funzione "contiene_punto" che, dati un rettangolo ed un punto,
+restituisce 1 se il punto è interno al rettangolo (perimetro incluso)
+e 0 altrimenti.
+
+La correttezza del programma potrà essere verificata tramite il
+comando:
+
+./pvcheck ./battaglia
+
+
+Secondo esercizio: colpi esplosivi
+----------------------------------
+
+Venite equipaggiati con un'arma più potente, in grado di affondare
+tutte le navi entro un certo raggio dal punto di impatto.  Modificare
+il programma in modo che ad essere affondate siano tutte le navi che
+distino al più una unità dalle coordinate indicate.
+
+Le coordinate dei colpi sono quelle già lette nel punto precedente, e
+anche il formato del risultato dovrà essere lo stesso tranne che per
+il marcatore che sarà "[COLPI_ESPLOSIVI]".
+
+Per effettuare la modifica richiesta occorrerà definire una funzione
+"distanza_punto_rettangolo" che calcola la distanza tra un punto e il
+più vicino tra i punti di un rettangolo.  Quest'ultima si appoggerà ad
+una funzione "distanza_punto_punto", che restituirà la distanza
+Euclidea tra due punti passati come parametri.
+
+Per il calcolo della radice quadrata si può utilizzare la funzione di
+libreria "sqrt", che richiede la direttiva "#include <math.h>" e
+l'aggiunta dell'opzione "-lm" in coda al comando di compilazione.
+
+La correttezza del programma potrà essere verificata tramite il
+comando:
+
+./pvcheck ./battaglia
+
+
