@@ -1,0 +1,208 @@
+[.TEST]
+Una gara
+
+[.ARGS]
+campionato1.txt
+
+
+[CLASSIFICA_PILOTI]
+Valtteri_Bottas 25
+Carlos_Sainz 18
+Max_Verstappen 15
+Felipe_Nasr 12
+Fernando_Alonso 10
+Daniel_Ricciardo 8
+Daniil_Kvyat 6
+Pastor_Maldonado 4
+Felipe_Massa 2
+Romain_Grosjean 1
+Jenson_Button 0
+Kimi_Raikkonen 0
+Lewis_Hamilton 0
+Marcus_Ericsson 0
+Nico_Hulkenberg 0
+Nico_Rosberg 0
+Roberto_Merhi 0
+Sebastian_Vettel 0
+Sergio_Perez 0
+Will_Stevens 0
+
+[CLASSIFICA_SQUADRE]
+Toro_Rosso 33
+Williams 27
+Red_Bull 14
+Sauber 12
+McLaren 10
+Lotus 5
+Ferrari 0
+Force_India 0
+Marussia 0
+Mercedes 0
+
+############################################################
+
+[.TEST]
+Due gare
+
+[.ARGS]
+campionato2.txt
+
+[CLASSIFICA_PILOTI]
+Roberto_Merhi 40
+Will_Stevens 40
+Valtteri_Bottas 36
+Sergio_Perez 20
+Carlos_Sainz 18
+Felipe_Massa 14
+Max_Verstappen 14
+Fernando_Alonso 12
+Lewis_Hamilton 4
+Pastor_Maldonado 3
+Jenson_Button 1
+Daniel_Ricciardo 0
+Daniil_Kvyat 0
+Felipe_Nasr 0
+Kimi_Raikkonen 0
+Marcus_Ericsson 0
+Nico_Hulkenberg 0
+Nico_Rosberg 0
+Romain_Grosjean 0
+Sebastian_Vettel 0
+
+[CLASSIFICA_SQUADRE]
+Marussia 80
+Williams 50
+Toro_Rosso 32
+Force_India 20
+McLaren 13
+Mercedes 4
+Lotus 3
+Ferrari 0
+Red_Bull 0
+Sauber 0
+
+############################################################
+
+[.TEST]
+Dieci gari
+
+[.ARGS]
+campionato10.txt
+
+[CLASSIFICA_PILOTI]
+Roberto_Merhi 203
+Kimi_Raikkonen 154
+Valtteri_Bottas 122
+Daniel_Ricciardo 110
+Carlos_Sainz 101
+Marcus_Ericsson 70
+Sebastian_Vettel 66
+Felipe_Massa 59
+Lewis_Hamilton 41
+Max_Verstappen 25
+Will_Stevens 23
+Felipe_Nasr 16
+Romain_Grosjean 14
+Daniil_Kvyat 5
+Fernando_Alonso 1
+Jenson_Button 0
+Nico_Hulkenberg 0
+Nico_Rosberg 0
+Pastor_Maldonado 0
+Sergio_Perez 0
+
+[CLASSIFICA_SQUADRE]
+Marussia 226
+Ferrari 220
+Williams 181
+Toro_Rosso 126
+Red_Bull 115
+Sauber 86
+Mercedes 41
+Lotus 14
+McLaren 1
+Force_India 0
+
+############################################################
+
+[.TEST]
+Venti gare
+
+[.ARGS]
+campionato20.txt
+
+[CLASSIFICA_PILOTI]
+Pastor_Maldonado 359
+Nico_Rosberg 287
+Max_Verstappen 272
+Carlos_Sainz 255
+Romain_Grosjean 146
+Valtteri_Bottas 126
+Sebastian_Vettel 108
+Lewis_Hamilton 89
+Kimi_Raikkonen 86
+Daniel_Ricciardo 74
+Felipe_Nasr 56
+Felipe_Massa 47
+Nico_Hulkenberg 40
+Marcus_Ericsson 22
+Jenson_Button 19
+Fernando_Alonso 11
+Daniil_Kvyat 9
+Roberto_Merhi 8
+Sergio_Perez 6
+Will_Stevens 0
+
+[CLASSIFICA_SQUADRE]
+Toro_Rosso 527
+Lotus 505
+Mercedes 376
+Ferrari 194
+Williams 173
+Red_Bull 83
+Sauber 78
+Force_India 46
+McLaren 30
+Marussia 8
+
+############################################################
+
+[.TEST]
+Tutti a pari punti
+
+[.ARGS]
+campionatoU.txt
+
+[CLASSIFICA_PILOTI]
+Carlos_Sainz 101
+Daniel_Ricciardo 101
+Daniil_Kvyat 101
+Felipe_Massa 101
+Felipe_Nasr 101
+Fernando_Alonso 101
+Jenson_Button 101
+Kimi_Raikkonen 101
+Lewis_Hamilton 101
+Marcus_Ericsson 101
+Max_Verstappen 101
+Nico_Hulkenberg 101
+Nico_Rosberg 101
+Pastor_Maldonado 101
+Roberto_Merhi 101
+Romain_Grosjean 101
+Sebastian_Vettel 101
+Sergio_Perez 101
+Valtteri_Bottas 101
+Will_Stevens 101
+
+[CLASSIFICA_SQUADRE]
+Ferrari 202
+Force_India 202
+Lotus 202
+Marussia 202
+McLaren 202
+Mercedes 202
+Red_Bull 202
+Sauber 202
+Toro_Rosso 202
+Williams 202

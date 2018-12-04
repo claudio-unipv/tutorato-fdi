@@ -1,0 +1,60 @@
+FILE
+====
+
+Al campionato del mondo di Formula 1 partecipano 10 squadre, formate
+da due piloti ciascuna.  I risultati delle gare della stagione sono
+memorizzati in un file di testo.  Per ciascuna gara viene riportato
+l'ordine di arrivo nel formato:
+
+  PILOTA1 SQUADRA1
+  PILOTA2 SQUADRA2
+  ...
+
+dove i nomi di piloti e squadre sono stringhe senza spazi, e dove
+ciascuna riga contiene al più 50 caratteri.  Dopo le 20 righe relative
+ad una gara ci sono le 20 righe corrispondenti alla gara successiva, e
+così via...
+
+Per ciascuna gara la prima riga contiene il nome del vincitore, la
+seconda quello del secondo arrivato, e così via.  Tutti i piloti sono
+presenti nell'elenco, anche quelli che non sono giunti al traguardo.
+In ciascuna gara sono assegnati dei punti validi per la classifica
+mondiali: dal primo al decimo arrivato si assegnano 25, 18, 15, 12,
+10, 8, 6, 4, 2, 1 punti; i concorrenti che arrivano oltre la decima
+posizione non ottengono nessun punto.
+
+
+Primo esercizio: classifica dei piloti
+--------------------------------------
+
+Scrivere un programma C che legga il contenuto del file il cui nome è
+specificato come parametro della riga di comando, e che stampi la
+classifica dei piloti ordinata per punteggio decrescente (a parità di
+punteggio riportare i piloti in ordine alfabetico).  Il punteggio di
+un pilota è la somma dei punti ottenuti nelle singole gare.  Stampare
+il risultato nel formato:
+
+  [CLASSIFICA_PILOTI]
+  pilota1 punteggio1
+  ...
+  pilota20 punteggio20
+
+
+Secondo esercizio: classifica delle squadre
+-------------------------------------------
+
+Modificare il programma in modo che stampi anche la classifica delle
+squadre, dove il punteggio di una squadra consiste nella somma dei
+punti ottenuti dai suoi piloti.  Anche l'ordinamento delle squadre
+deve seguire il criterio del punteggio decrescente (e l'ordine
+alfabetico in caso di parità).
+
+  [CLASSIFICA_SQUADRE]
+  scuderia1 punteggio1
+  ...
+  scuderia10 punteggio10
+
+Per verificare la correttezza di entrambe le classifiche, si può
+utilizzare il comando:
+
+  ./pvcheck ./formula1
