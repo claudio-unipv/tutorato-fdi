@@ -7,31 +7,26 @@
  * Formula 1
  * ---------------------
  *
- * 1) Modifica il file definendo la struttura "rettangolo" e
- *    completando le funzioni "leggi_flotta" e "main".
+ * 1) Modifica il file completando le funzioni "punteggio",
+ *    "leggi_gara" e "main".
  * 
  * 2) Compila il programma con il comando:
  * 
- *      gcc -Wall -o battaglia battaglia.c
+ *      gcc -Wall -o formula1 formula1.c
  *    
- * 3) Esegui il programma digitando al terminale:
+ * 3) Esegui il programma digitando al terminale, per 
  * 
- *      ./battaglia
+ *      ./formula1 campionato10.txt
  *
- * 4) Verifica la correttezza della soluzione al primo esercizio:
+ * 4) Completa con l'ordinamento delle classifiche.
+ *
+ * 5) Verifica la correttezza della soluzione:
  *     
  *      ./pvcheck ./formula1
  *
- * 5) Completa il resto del programma e riprova ad eseguire i test
- *    finche' non vengono superati tutti.
- *
- * 6) Modifica il programma per risolvere il secondo esercizio,
- *    aggiungendo le funzioni opportune e richiamandole nella
- *    funzione "main".
- *
- * 7) Verifica la correttezza della soluzione al primo esercizio:
- *     
- *      ./pvcheck ./formula1
+ * Anche se le due richieste sono molto simili, si puo` iniziare con
+ * la gestione della sola classifica dei piloti.  La classifica dei
+ * team puo` essere aggiunta in un secondo momento.
  * 
  ***********************************************************************/
 
@@ -43,20 +38,6 @@
 #define N_PILOTI 20
 #define MAX_RIGA 50
 
-#define POS_A_PUNTI 10		/* Posizioni a cui si assegnano punti */
-
-
-int punteggio(int posizione)
-{
-}
-
-
-/* A differenza dei dati da elaborare, non e` una cattiva idea
-   memorizzare quelli COSTANTI in variabili globali, in modo che siano
-   accessibili in tutto il programma. */
-int punti_per_pos[POS_A_PUNTI] = {
-  25, 18, 15, 12, 10, 8, 6, 4, 2, 1
-};
 
 /* I dati saranno memorizzati in array di strutture.  Piloti e squadre
    richiedono lo stesso tipo di informazioni (nome e punteggio).
@@ -69,154 +50,95 @@ struct classificato {
 };
 
 
-/* Cerca in un array il record di informazioni corrispondente al nome
-   specificato.  Se tale record non esiste, viene inizializzato il
-   primo record non ancora utilizzato.  I record non utilizzati si
-   riconoscono dal fatto che il nome inizia con il terminatore '\0'
-   (cioe` il nome e` una stringa vuota). */
-struct classificato *cerca_classificato(struct classificato
-					*elenco, int size,
-					char *nome)
+/* Calcola i punti che spettano per la posizione data. */
+int punteggio(int posizione)
 {
-  int i = 0;
-  for (i = 0; i < size; i++) {
-    if (strcmp(elenco[i].nome, nome) == 0)
-      return &elenco[i];	/* Trovato */
-    if (elenco[i].nome[0] == '\0') {
-      /* Trovato un record vuoto, da inizializzare 
-         con il nome prima di restituirlo. */
-      strcpy(elenco[i].nome, nome);
-      elenco[i].punti = 0;
-      return &elenco[i];
-    }
-  }
-  /* Non si dovrebbe mai arrivare qui. */
-  return NULL;
+  /* COMPLETA LA FUNZIONE */
 }
 
+
 /* Legge una gara dal file e aggiorna i punteggi negli array
-   conententi informazioni su piloti e scuderie.  Restituisce il
-   numero di righe elaborate (quindi 0 se e` terminato il file, oppure
-   un numero di righe pari al numero dei piloti). */
-int leggi_gara(FILE * fin,
+   contenenti informazioni su piloti e scuderie.  Restituisce 0 se il
+   file e` finito, 1 altrimenti. */
+int leggi_gara(FILE * file,
 	       struct classificato *piloti,
 	       struct classificato *scuderie)
 {
   char nome_pilota[MAX_RIGA + 1];
   char nome_scuderia[MAX_RIGA + 1];
 
-  pos = 0;
-  /* Continua finche' si registra il risultato di tutti i 
-     piloti attesi e, contemporaneamente, finche' ci sono 
-     righe nel file. */
-  while (pos < N_PILOTI
-	 && fgets(buffer, MAX_RIGA + 1, fin) != NULL) {
-
-    sscanf(buffer, "%s %s", nome_pilota, nome_scuderia);
-
-    if (pos < POS_A_PUNTI)
-      punti = punti_per_pos[pos];
-    else
-      punti = 0;
-
-    /* Cerca il pilota nell'elenco e gli assegna 
-       i punti. */
-    struct classificato *pilota =
-	cerca_classificato(piloti, N_PILOTI, nome_pilota);
-    pilota->punti += punti;
-
-    /* Cerca la squadra nell'elenco e gli assegna 
-       i punti. */
-    struct classificato *scuderia =
-	cerca_classificato(scuderie, N_SQUADRE,
-			   nome_scuderia);
-    scuderia->punti += punti;
-
-    /* Passaggio alla posizione successiva. */
-    pos++;
-  }
-  return pos;
+  /* COMPLETA LA FUNZIONE */
 }
 
-/* Riordina gli elementi per generare la classifica finale. */
-void ordina_classifica(struct classificato *elenco,
-		       int size)
+
+/* Ordina la classifica. */
+void ordina_classifica(struct classificato *a, int n)
 {
-  /* Doppio bubblesort (variante stabile). In alternativa 
-     si sarebbe potuto utilizzare una singola passata 
-     di ordinamento che tenesse conto di entrambi i 
-     criteri. */
-
-  int scambi;
-  int i;
-  struct classificato temp;
-
-  /* Ordinamento alfabetico per nome. */
-  do {
-    scambi = 0;
-    for (i = 1; i < size; i++) {
-      if (strcmp(elenco[i].nome, elenco[i - 1].nome) < 0) {
-	temp = elenco[i];
-	elenco[i] = elenco[i - 1];
-	elenco[i - 1] = temp;
-	scambi++;
-      }
-    }
-  } while (scambi > 0);
-
-  /* Ordinamento per punteggio decrescente. */
-  do {
-    scambi = 0;
-    for (i = 1; i < size; i++) {
-      if (elenco[i].punti > elenco[i - 1].punti) {
-	temp = elenco[i];
-	elenco[i] = elenco[i - 1];
-	elenco[i - 1] = temp;
-	scambi++;
-      }
-    }
-  } while (scambi > 0);
+  /* COMPLETA LA FUNZIONE IMPLEMENTANDO UN QUALUNQUE ALGORITMO DI
+     ORDINAMENTO  (es. selection sort o bubblesort). */
 }
 
-/* Inizializza tutti i record in modo che siano riconoscibili come
-   vuoti.*/
-void inizializza_elenco(struct classificato *elenco,
-			int size)
-{
-  int i;
-  for (i = 0; i < size; i++)
-    elenco[i].nome[0] = '\0';
-}
 
 /* Funzione principale. */
 int main(int argc, char *argv[])
 {
-  struct classificato piloti[N_PILOTI];
-  struct classificato scuderie[N_SQUADRE];
-  FILE *fin;
+  /* Supponiamo noti i nomi di piloti e scuderie (come potremmo
+     procedere se cosi` non fosse?). */
+  struct classificato piloti[N_PILOTI] = {
+    {"Carlos_Sainz", 0},
+    {"Daniel_Ricciardo", 0},
+    {"Daniil_Kvyat", 0},
+    {"Felipe_Massa", 0},
+    {"Felipe_Nasr", 0},
+    {"Fernando_Alonso", 0},
+    {"Jenson_Button", 0},
+    {"Kimi_Raikkonen", 0},
+    {"Lewis_Hamilton", 0},
+    {"Marcus_Ericsson", 0},
+    {"Max_Verstappen", 0},
+    {"Nico_Hulkenberg", 0},
+    {"Nico_Rosberg", 0},
+    {"Pastor_Maldonado", 0},
+    {"Roberto_Merhi", 0},
+    {"Romain_Grosjean", 0},
+    {"Sebastian_Vettel", 0},
+    {"Sergio_Perez", 0},
+    {"Valtteri_Bottas", 0},
+    {"Will_Stevens", 0}
+  };
+  struct classificato scuderie[N_SQUADRE] = {
+    {"Ferrari", 0},
+    {"Force_India", 0},
+    {"Lotus", 0},
+    {"Marussia", 0},
+    {"McLaren", 0},
+    {"Mercedes", 0},
+    {"Red_Bull", 0},
+    {"Sauber", 0},
+    {"Toro_Rosso", 0},
+    {"Williams", 0}
+  };
+  
+  FILE *file;
   int i;
-
+  int finito;  
+  
   if (argc != 2) {
     printf("Utilizzo: ./formula1 FILE_RISULTATI\n");
     return 1;
   }
 
-  /* Inizializzazione */
-  inizializza_elenco(piloti, N_PILOTI);
-  inizializza_elenco(scuderie, N_SQUADRE);
-
   /* Lettura dei dati */
-  fin = fopen(argv[1], "rt");
-  while (leggi_gara(fin, piloti, scuderie) != 0) {
-    /* Nulla da fare qui... */
+  file = fopen(argv[1], "rt");
+  finito = 0;
+  while (finito == 0) {
+    /* COMPLETA RICHIAMANDO LA FUNZIONE "leggi_gara", FINO A CHE IL
+       FILE NON E` STATO LETTO DEL TUTTO. */
   }
-  fclose(fin);
+  fclose(file);
 
-  /* Ordinamento */
-  ordina_classifica(piloti, N_PILOTI);
-  ordina_classifica(scuderie, N_SQUADRE);
-
-  /* Stampa dei risultati */
+  /* COMPLETA RICHIAMANDO LA FUNZIONE DI ORDINAMENTO. */
+  
   printf("[CLASSIFICA_PILOTI]\n");
   for (i = 0; i < N_PILOTI; i++)
     printf("%s %d\n", piloti[i].nome, piloti[i].punti);
