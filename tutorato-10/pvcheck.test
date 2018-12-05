@@ -1,0 +1,87 @@
+[.SECTIONS]
+VELOCITA unordered
+
+############################################################
+
+[.TEST]
+Una sola auto
+
+[.ARGS]
+autostrada1.txt
+
+[VELOCITA]
+SU176TU 76.48
+
+[MULTE]
+0
+
+############################################################
+
+[.TEST]
+Due auto
+
+[.ARGS]
+autostrada2.txt
+
+[VELOCITA]
+XF971VK 133.71
+KC763VO 71.03
+
+[MULTE]
+1
+
+############################################################
+
+[.TEST]
+Dieci auto
+
+[.ARGS]
+autostrada10.txt
+
+[VELOCITA]
+CE677JN 183.36
+TB917TK 157.17
+GB188AR 169.26
+PU799KS 97.07
+SG678FV 120.02
+JX119KA 85.73
+TJ399KA 143.5
+EO369FV 134.71
+KT803WO 108.21
+WP709AY 73.34
+
+[MULTE]
+5
+
+############################################################
+
+[.TEST]
+Venti auto
+
+[.ARGS]
+autostrada20.txt
+
+[VELOCITA]
+XB145OI 125.55
+LO636AK 150.66
+SI718FC 114.91
+RK393MN 138.36
+VS506KP 144.25
+TR863NM 157.67
+WA700EJ 173.84
+PQ163LX 183.24
+MN271SG 169.5
+OF638EE 161.43
+OI469PX 132.94
+YC011WJ 101.19
+IV908AQ 188.33
+AK581JL 95.49
+IN346EP 107.62
+ZR055QC 121.07
+OU909QJ 89.21
+IX182HY 70.62
+WS862NA 77.93
+JA028NO 83.7
+
+[MULTE]
+10

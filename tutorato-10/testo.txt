@@ -1,0 +1,86 @@
+STRUTTURE DATI
+==============
+
+Al fine di monitorare la velocità dei veicoli in un tratto
+autostradale vengono installate due telecamere.  Ciascuna telecamera
+rileva la targa dei veicoli che passano e memorizza questa
+informazione annotandola con l'orario in cui è avvenuto il
+rilevamento.  I rilevamenti di entrambe le telecamere sono memorizzati
+come testo in un file.  La prima riga del file contiene l'indicazione
+della distanza (in metri) tra le due telecamere.  Ciascuna delle altre
+righe contiene i dati di un rilevamento (targa del veicolo e orario
+nel formato HH:MM:SS in ordine cronologico.  Ad esempio,
+un file di questo tipo potrebbe iniziare con le righe:
+
+132.9
+AZ909LL 10:13:42
+PL718EB 10:14:20
+GM094AT 10:15:06
+AZ909LL 10:13:52
+GM094AT 10:15:23
+...
+
+in questo caso le telecamere disterebbero 132,9 metri.  Per
+distinguere tra i rilevamenti delle due telecamere bisogna tener conto
+che il passaggio sotto la seconda telecamera richiede necessariamente
+un passaggio precedente della stessa vettura sotto la prima (si assuma
+inoltre che nessun veicolo effettui più passaggi nel tratto
+monitorato).
+
+Ai fini di questo esercizio, il numero di targa è composto da
+esattamente 7 caratteri alfanumerici e ciascuna riga contiene al più
+40 caratteri.
+
+
+Primo esercizio: Calcolo della velocità media
+---------------------------------------------
+
+Scrivere un programma C che legga il contenuto di un file di
+rilevamenti il cui nome è specificato come argomento dalla riga di
+comando.  Il programma dovrà calcolare e stampare targa e velocità
+media (in chilometri orari) di attraversamento del tratto monitorato
+per ciascun veicolo rilevato.
+
+Per decodificare le righe dei file è possibile l'utilizzo di varianti
+della funzione "scanf" specificando la stringa di formato "%s %d:%d:%d".
+L'elenco delle velocità medie va riportato nel formato:
+
+[VELOCITA]
+targa1 velocita1
+targa2 velocita2
+...
+
+L'ordine dei veicoli non è rilevante.
+
+Poiché il numero di veicoli non è noto (e neppure quello dei
+rilevamenti) si consiglia l'utilizzo di una lista concatenata che
+memorizzi i rilevamenti effettuati dalla prima telecamera per cui non
+si abbia ancora un rilevamento corrispondente da parte della seconda.
+In pratica dopo aver letto un rilevamento dal file si potrebbe
+procedere cercando nella lista un rilevamento con la stessa targa; in
+caso di esito negativo della ricerca il rilevamento si riferirebbe
+alla prima telecamera e andrebbe pertanto memorizzato nella lista; in
+caso di esito positivo si procederebbe con il calcolo della velocità
+sulla base degli orari dei due rilevamenti e, opzionalmente, con la
+rimozione dalla lista del primo rilevamento (in modo da ridurre
+l'utilizzo di memoria e di velocizzare le ricerche successive).  La
+velocità calcolato può essere stampata direttamente a video, oppure
+può essere memorizzata in un'ulteriore lista i cui elementi sono
+stampati in seguito (questa seconda opzione semplifica la modifica del
+programma per rispondere al quesito successivo).
+
+
+Secondo esercizio: eccesso di velocità
+--------------------------------------
+
+Il limite di velocità nel tratto monitorato è di 130 km/h.  Si
+modifichi il programma in modo che conti il numero M di veicoli che
+superano il limite.
+
+[MULTE]
+M
+
+Per verificare la correttezza della risposta ad entrambi i quesiti si
+può utilizzare il comando
+
+./pvcheck ./autostrada
