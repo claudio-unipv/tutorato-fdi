@@ -1,0 +1,547 @@
+# File di test per la prova di laboratorio del 28/11/2017 (colori).
+
+[.TEST]
+Due colori
+
+[.ARGS]
+.FILE
+
+[.FILE]
+2
+Grigio 128 128 128
+Rosso 255 0 0
+
+[GRIGI]
+1
+
+[CALDO]
+Rosso
+
+[SIMILE]
+Grigio
+
+[INTENSITA]
+Rosso 85.00
+Grigio 128.00
+
+############################################################
+
+[.TEST]
+Primari
+
+[.ARGS]
+.FILE
+
+[.FILE]
+3
+Blu 0 0 255
+Rosso 255 0 0
+Verde 0 255 0
+
+[GRIGI]
+0
+
+[CALDO]
+Rosso
+
+[SIMILE]
+Blu
+
+[INTENSITA]
+Blu 85.00
+Rosso 85.00
+Verde 85.00
+
+############################################################
+
+[.TEST]
+Scala di grigi
+
+[.ARGS]
+.FILE
+
+[.FILE]
+5
+Bianco 255 255 255
+Grigio_chiaro 200 200 200
+Grigio_medio 125 125 125
+Grigio_scuro 50 50 50
+Nero 0 0 0
+
+[GRIGI]
+5
+
+[CALDO]
+Bianco
+
+[SIMILE]
+Grigio_chiaro
+
+[INTENSITA]
+Nero 0.00
+Grigio_scuro 50.00
+Grigio_medio 125.00
+Grigio_chiaro 200.00
+Bianco 255.00
+
+############################################################
+
+[.TEST]
+Arcobaleno
+
+[.ARGS]
+.FILE
+
+[.FILE]
+7
+Arancione 255 128 0
+Blu 0 0 255
+Giallo 255 255 0
+Indaco 75 0 130
+Rosso 255 0 0
+Verde 0 255 0
+Violetto 148 0 211
+
+[GRIGI]
+0
+
+[CALDO]
+Arancione
+
+[SIMILE]
+Giallo
+
+[INTENSITA]
+Indaco 68.33
+Blu 85.00
+Rosso 85.00
+Verde 85.00
+Violetto 119.67
+Arancione 127.67
+Giallo 170.00
+
+############################################################
+
+[.TEST]
+Rossi
+
+[.ARGS]
+.FILE
+
+[.FILE]
+5
+Rosso_chiarissimo 250 0 0 
+Rosso_medio 130 0 0
+Rosso_chiaro 190 0 0
+Rosso_scurissimo 10 0 0
+Rosso_scuro 70 0 0
+
+[GRIGI]
+0
+
+[CALDO]
+Rosso_chiarissimo
+
+[SIMILE]
+Rosso_chiaro
+
+[INTENSITA]
+Rosso_scurissimo 3.33
+Rosso_scuro 23.33
+Rosso_medio 43.33
+Rosso_chiaro 63.33
+Rosso_chiarissimo 83.33
+
+############################################################
+
+[.TEST]
+Verdi
+
+[.ARGS]
+.FILE
+
+[.FILE]
+5
+Verde_chiarissimo 0 250 0 
+Verde_medio 0 130 0
+Verde_chiaro 0 190 0
+Verde_scurissimo 0 10 0
+Verde_scuro 0 70 0
+
+[GRIGI]
+0
+
+[CALDO]
+Verde_chiarissimo
+
+[SIMILE]
+Verde_chiaro
+
+[INTENSITA]
+Verde_scurissimo 3.33
+Verde_scuro 23.33
+Verde_medio 43.33
+Verde_chiaro 63.33
+Verde_chiarissimo 83.33
+
+############################################################
+
+[.TEST]
+Azzurri
+
+[.ARGS]
+.FILE
+
+[.FILE]
+5
+Azzurro_chiarissimo 0 0 250
+Azzurro_medio 0 0 130
+Azzurro_chiaro 0 0 190
+Azzurro_scurissimo 0 0 10
+Azzurro_scuro 0 0 70
+
+[GRIGI]
+0
+
+[CALDO]
+Azzurro_scurissimo
+
+[SIMILE]
+Azzurro_scuro
+
+[INTENSITA]
+Azzurro_scurissimo 3.33
+Azzurro_scuro 23.33
+Azzurro_medio 43.33
+Azzurro_chiaro 63.33
+Azzurro_chiarissimo 83.33
+
+############################################################
+
+[.TEST]
+Colori estremi
+
+[.ARGS]
+.FILE
+
+[.FILE]
+8
+Bianco 255 255 255
+Blu 0 0 255
+Ciano 0 255 255
+Giallo 255 255 0
+Magenta 255 0 255
+Nero 0 0 0
+Rosso 255 0 0
+Verde 0 255 0
+
+[GRIGI]
+2
+
+[CALDO]
+Giallo
+
+[SIMILE]
+Bianco
+
+[INTENSITA]
+Nero 0.00
+Blu 85.00
+Rosso 85.00
+Verde 85.00
+Ciano 170.00
+Giallo 170.00
+Magenta 170.00
+Bianco 255.00
+
+############################################################
+
+[.TEST]
+Esempio nel testo
+
+[.ARGS]
+.FILE
+
+[.FILE]
+7
+Bianco 255 255 255
+Blu 0 0 255
+Grigio_topo 60 60 60
+Magenta 255 0 255
+Nero 0 0 0
+Rosso_scuro 60 0 0
+Verde_brillante 70 255 70
+
+[GRIGI]
+3
+
+[CALDO]
+Rosso_scuro
+
+[SIMILE]
+Nero
+
+[INTENSITA]
+Nero 0.00
+Rosso_scuro 20.00
+Grigio_topo 60.00
+Blu 85.00
+Verde_brillante 131.67
+Magenta 170.00
+Bianco 255.00
+
+############################################################
+
+[.TEST]
+File distribuito all'esame
+
+[.ARGS]
+tavolozza.txt
+
+[GRIGI]
+107
+
+[CALDO]
+darkorange
+
+[SIMILE]
+orange
+
+
+[INTENSITA]
+black 0.00
+gray0 0.00
+gray1 3.00
+gray2 5.00
+gray3 8.00
+gray4 10.00
+gray5 13.00
+gray6 15.00
+gray7 18.00
+gray8 20.00
+gray9 23.00
+gray10 26.00
+gray11 28.00
+gray12 31.00
+gray13 33.00
+darkgreen 33.33
+gray14 36.00
+gray15 38.00
+gray16 41.00
+navy 42.67
+navyblue 42.67
+gray17 43.00
+gray18 46.00
+darkblue 46.33
+darkred 46.33
+gray19 48.00
+gray20 51.00
+gray21 54.00
+midnightblue 54.00
+gray22 56.00
+gray23 59.00
+gray24 61.00
+gray25 64.00
+gray26 66.00
+darkslategray 68.33
+mediumblue 68.33
+forestgreen 69.00
+gray27 69.00
+gray28 71.00
+gray29 74.00
+saddlebrown 75.67
+gray30 77.00
+gray31 79.00
+darkolivegreen 79.67
+firebrick 82.00
+gray32 82.00
+brown 83.00
+gray33 84.00
+blue 85.00
+green 85.00
+red 85.00
+gray34 87.00
+gray35 89.00
+darkslateblue 90.67
+seagreen 90.67
+gray36 92.00
+darkcyan 92.67
+darkmagenta 92.67
+gray37 94.00
+olivedrab 94.67
+sienna 95.67
+gray38 97.00
+gray39 99.00
+debianred 101.00
+limegreen 101.67
+gray40 102.00
+gray41 105.00
+maroon 106.67
+gray42 107.00
+orangered 108.00
+darkgoldenrod 109.67
+gray43 110.00
+gray44 112.00
+chocolate 115.00
+gray45 115.00
+gray46 117.00
+mediumseagreen 117.33
+mediumvioletred 117.67
+darkviolet 119.67
+gray47 120.00
+gray48 122.00
+gray49 125.00
+lawngreen 125.33
+lightseagreen 126.67
+steelblue 126.67
+gray50 127.00
+chartreuse 127.33
+springgreen 127.33
+slategray 128.00
+violetred 128.00
+indianred 129.67
+gray51 130.00
+darkorange 131.67
+royalblue 131.67
+gray52 133.00
+peru 133.67
+slateblue 133.67
+mediumspringgreen 134.67
+gray53 135.00
+blueviolet 135.67
+darkorchid 135.67
+lightslategray 136.00
+yellowgreen 136.33
+cadetblue 137.67
+gray54 138.00
+darkturquoise 138.33
+goldenrod 138.33
+gray55 140.00
+orange 140.00
+deeppink 140.67
+tomato 141.67
+dodgerblue 143.00
+gray56 143.00
+purple 144.00
+gray57 145.00
+gray58 148.00
+deepskyblue 148.67
+gray59 150.00
+gray60 153.00
+coral 154.00
+mediumslateblue 155.00
+gray61 156.00
+gold 156.67
+darkseagreen 158.00
+gray62 158.00
+rosybrown 158.00
+greenyellow 158.33
+mediumaquamarine 159.00
+mediumpurple 159.33
+palevioletred 159.33
+darkkhaki 159.67
+mediumorchid 160.67
+gray63 161.00
+mediumturquoise 161.67
+cornflowerblue 162.00
+gray64 163.00
+salmon 164.00
+lightcoral 165.33
+turquoise 165.33
+gray65 166.00
+lightslateblue 166.33
+gray66 168.00
+sandybrown 168.00
+darksalmon 168.33
+darkgray 169.00
+cyan 170.00
+magenta 170.00
+yellow 170.00
+gray67 171.00
+gray68 173.00
+lightgreen 175.33
+gray69 176.00
+tan 176.67
+gray70 179.00
+lightsalmon 179.00
+hotpink 180.00
+burlywood 180.33
+gray71 181.00
+orchid 181.33
+gray72 184.00
+palegreen 185.00
+gray73 186.00
+gray74 189.00
+gray75 191.00
+skyblue 192.00
+gray76 194.00
+gray77 196.00
+lightgoldenrod 196.33
+lightskyblue 197.00
+aquamarine 198.00
+lightsteelblue 198.00
+gray78 199.00
+plum 200.67
+gray79 201.00
+violet 202.00
+khaki 203.33
+gray80 204.00
+lightblue 206.33
+gray81 207.00
+thistle 207.67
+gray82 209.00
+lightpink 210.00
+powderblue 210.00
+lightgray 211.00
+gray83 212.00
+palegoldenrod 213.33
+gray84 214.00
+wheat 215.33
+navajowhite 216.67
+pink 216.67
+gray85 217.00
+paleturquoise 217.00
+gray86 219.00
+peachpuff 219.33
+gainsboro 220.00
+moccasin 221.33
+gray87 222.00
+gray88 224.00
+bisque 226.33
+gray89 227.00
+gray90 229.00
+blanchedalmond 231.67
+gray91 232.00
+antiquewhite 233.33
+gray92 235.00
+papayawhip 235.67
+mistyrose 236.00
+beige 236.67
+lavender 236.67
+lemonchiffon 236.67
+lightgoldenrodyellow 236.67
+gray93 237.00
+gray94 240.00
+linen 240.00
+cornsilk 241.00
+gray95 242.00
+oldlace 242.67
+lightcyan 244.67
+lightyellow 244.67
+gray96 245.00
+honeydew 245.00
+whitesmoke 245.00
+seashell 246.00
+lavenderblush 246.67
+gray97 247.00
+aliceblue 247.67
+floralwhite 248.33
+azure 250.00
+gray98 250.00
+ivory 250.00
+mintcream 250.00
+ghostwhite 250.33
+snow 251.67
+gray99 252.00
+gray100 255.00
+white 255.00

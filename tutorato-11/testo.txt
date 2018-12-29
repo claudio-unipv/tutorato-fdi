@@ -1,0 +1,74 @@
+PREPARAZIONE ALL'ESAME
+======================
+
+Svolgilmento del tema d'esame del 28/11/2017
+--------------------------------------------
+
+Uno studio grafico memorizza in file di testo i dati relativi alle
+tavolozze dei colori in uso nei suoi progetti.  Ciascun colore viene
+identificato da un nome mnemonico e dal valore numerico delle tre
+componenti primarie (rosso, verde e blu).  La prima riga del file
+indica il numero di colori nella tavolozza, mentre le restanti righe
+codificano, IN ORDINE ALFABETICO, i dati relativi a ciascun
+colore come campi separati da caratteri di spaziatura.  I campi sono:
+
+- nome del colore (massimo 40 caratteri);
+- la quantità di rosso (un numero intero nell'intervallo 0-255);
+- la quantità di verde (un numero intero nell'intervallo 0-255);
+- la quantità di blu (un numero intero nell'intervallo 0--255).
+
+La lunghezza delle righe non può superare gli 80 caratteri.  Ad
+esempio, un file di questo tipo potrebbe contenere le righe seguenti:
+
+  7
+  Bianco 255 255 255
+  Blu 0 0 255
+  Grigio_topo 60 60 60
+  Magenta 255 0 255
+  Nero 0 0 0
+  Rosso_scuro 60 0 0
+  Verde_brillante 70 255 70
+
+Si scriva un programma in linguaggio C che, dato il nome del file come
+argomento dalla riga di comando, ne legga il contenuto e calcoli le
+risposte alle domande che seguono.  La risposta a ciascuna domanda
+deve essere stampata a terminale secondo il formato indicato,
+preceduta da un identificatore specifico racchiuso tra parentesi
+quadre.
+
+1) Contare il numero G di colori che rappresentano una
+   tonalità di grigio (riconoscibili in quanto presentano tre valori
+   uguali per le componenti primarie).  Riportare il valore ottenuto
+   secondo il formato:
+
+   [GRIGI]
+   G
+
+2) Trovare il colore più caldo, definito come quello per cui è massima
+   la differenza tra componente rossa e componente blu.  In caso di
+   parità selezionare il colore il cui nome viene prima nell'ordine
+   alfabetico.  Stamparne il nome C secondo il formato:
+
+   [CALDO]
+   C  
+
+3) Determinare il nome S del colore che differisce meno da quello
+   individuato al punto precedente.  La dissimilarità si misura
+   sommando le differenze, in valore assoluto, nelle tre componenti
+   primarie.  In caso di parità riportare il nome che viene prima
+   nell'ordine alfabetico.  Riportare il risultato nel formato:
+  
+   [SIMILE]
+   S 
+  
+4) Elencare i nomi dei colori dopo averli ordinati per intensità
+   crescente.  L'intensità si misura come media delle tre componenti.
+   A parità di intensità, deve essere rispettato l'ordine
+   alfabetico.  Per ciascun colore indicare nome ed intensità (usando
+   almeno due cifre decimali) nel formato:
+
+   [INTENSITA]
+   COLORE_1 INTENSITA_1
+   COLORE_2 INTENSITA_2
+   ...
+   COLORE_n INTENSITA_n
