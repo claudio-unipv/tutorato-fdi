@@ -1,70 +1,75 @@
 PREPARAZIONE ALL'ESAME
 ======================
 
-Svolgilmento del tema d'esame del 24/7/2018
--------------------------------------------
+Svolgilmento del tema d'esame del 2/7/2018
+------------------------------------------
 
-Una pizzeria archivia il proprio menu in un file di testo.  Per
-ciascuna pizza vengono memorizzati il nome, l'elenco degli ingredienti
-ed il prezzo.  Più in dettaglio, ciascuna riga del file riporta come
-campi separati da caratteri di spaziatura, le informazioni relative ad
-una pizza:
+Una società che gestisce distributori automatici di bevande calde
+fornisce i propri clienti di apposite chiavette elettroniche
+ricaricabili che consentono di effettuare gli acquisti.  Ciascuna
+chiavetta memorizza tutti gli eventi che modificano il credito
+residuo, cioè gli acquisti di bevande e le ricariche tramite monete.
 
-- il nome (una sequenza di caratteri alfabetici);
+I dati sono memorizzati nella chiavetta sotto forma di un file di
+testo in cui ciascuna riga corrisponde ad un evento (in ordine
+cronologico).  Più in dettaglio, ciascuna riga non può superare
+gli 80 caratteri e riporta come campi separati da caratteri di
+spaziatura le seguenti informazioni:
 
-- l'elenco degli ingredienti (5 sequenza di caratteri alfabetici);
+- l'orario dell'evento, espresso come numero di secondi passati
+  dall'inizio del primo gennaio 2015;
 
-- il prezzo in euro nel formato E'CC dove E indica la parte intera e
-  CC la parte in centesimi.
+- un'etichetta che identifica il tipo dell'evento.  Può essere il nome
+  di una bevanda (es. 'CAPPUCCINO') se si tratta di un acquisto,
+  oppure il termine `RICARICA' se si tratta della ricarica tramite
+  moneta;
+  
+- l'importo della bevanda o l'ammontare della ricarica, espresso in
+  centesimi di euro.
 
-La lunghezza dei nomi delle pizze e degli ingredienti non supera mai i
-20 caratteri di lunghezza.  La pizzeria garantisce che non ci sono mai
-più di 80 pizze nel menu.  Inoltre, ciascuna pizza è composta al
-massimo da 5 ingredienti (senza ripetizioni, inoltre per le pizze con
-un numero inferiore di ingredienti vengono riportati dei trattini '-'
-in coda all'elenco al posto degli ingredienti mancanti).
+All'inizio il credito nella chiavetta è nullo, le ricariche aumentano
+il credito mentre l'acquisto di bevande lo diminuiscono.
 
 Ad esempio, un file valido potrebbe essere il seguente:
 
-  MARGHERITA pomodoro mozzarella - - - 5'00
-  MARINARA pomodoro aglio - - - 5'00
-  NAPOLI pomodoro mozzarella acciughe - - 5'50
-  VEGETARIANA pomodoro mozzarella peperoni melanzane zucchine 7'00
-  AMERICANA pomodoro mozzarella peperoni salsiccia - 8'50
+  89132840 RICARICA 50
+  89132848 RICARICA 200
+  89132851 MOCACCINO 50
+  89240532 CAFFE 50
+  89240542 CAPPUCCINO 60
+  89304867 RICARICA 20
 
 Si scriva un programma in linguaggio C che, DATO IL NOME DEL FILE COME
-ARGOMENTO DALLA RIGA DI COMANDO, ne legga il contenuto e calcoli le
-risposte alle domande che seguono.  La risposta a ciascuna domanda
-deve essere stampata a terminale secondo il formato indicato,
-preceduta da un identificatore specifico racchiuso tra parentesi
-quadre.
+  ARGOMENTO DALLA RIGA DI COMANDO, ne legga il contenuto e calcoli le
+  risposte alle domande che seguono.  La risposta a ciascuna domanda
+  deve essere stampata a terminale secondo il formato indicato,
+  preceduta da un identificatore specifico racchiuso tra parentesi
+  quadre.
 
-1) Determinare la pizza che costa più (in caso di parità, scegliere
-   quella che compare per prima nel file) e riportarne nome N e prezzo
-   C in centesimi di euro:
+1) Calcolare il credito residuo R al termine degli eventi memorizzati
+   nel file.  Riportarlo nel formato:
 
-  [MASSIMO]  
-  N C
+   [RESIDUO]
+   R
 
-2) Determinare il numero medio M di ingredienti per pizza e riportarlo
-   nel formato:
+2) Si determini il credito massimo M raggiunto nel corso del periodo
+   monitorato.  Si usi il formato:
 
-  [INGREDIENTI]
-  M
+   [MASSIMO]
+   M
 
-3) Individuare l'elenco degli ingredienti che compaiono una sola volta
-   nel menu.  Riportarne i nomi I1, ..., Ik in un ordine qualsiasi:
+3) Si determini la più lunga sequenza di ricariche consecutive e se ne
+   riportino gli importi.  A parità di lunghezza riportare gli importi
+   di quella che occorre per prima.  Si usi il formato:
 
-  [UNICI]
-  I1
-  I2
-  ...
-  Ik
+   [RICARICHE]
+   R1
+   R2
+   ...
+   Rk
 
-4) Determinare la pizza con il più basso costo per ingrediente
-   (rapporto tra prezzo e numero di ingredienti).  In caso di parità
-   scegliere la pizza che compara per prima nel file.  Riportarne il
-   nome C come segue:
+4) Si calcoli il numero massimo di caffe C acquistati in un periodo di
+   60 minuti.  Lo si riporti come segue:
 
-  [CONVENIENTE]
-  C
+   [CAFFE]
+   C

@@ -1,281 +1,225 @@
-# File di test per la prova di laboratorio del 24/7/2018 (pizzeria).
-
-[.SECTIONS]
-UNICI unordered
+# File di test per la prova di laboratorio del 2/7/2018 (chiavetta
+  distributore).
 
 
 ######################################################################
 
 [.TEST]
-Solo una pizza
+Solo una ricarica
 
 [.ARGS]
 .FILE
 
 [.FILE]
-MARGHERITA pomodoro mozzarella - - - 99'99
+1 RICARICA 100
+
+[RESIDUO]
+100
 
 [MASSIMO]
-MARGHERITA 9999
+100
 
-[INGREDIENTI]
-2.0
+[RICARICHE]
+100
 
-[UNICI]
-pomodoro
-mozzarella
-
-[CONVENIENTE]
-MARGHERITA
+[CAFFE]
+0
 
 ######################################################################
 
 [.TEST]
-Due pizze
+Due ricariche
 
 [.ARGS]
 .FILE
 
 [.FILE]
-VUOTA - - - - - 0'01
-PIENA abbacchio barbabietola cedro datteri edera 10'00
+1 RICARICA 50
+2 RICARICA 100
+
+[RESIDUO]
+150
 
 [MASSIMO]
-PIENA 1000
+150
 
-[INGREDIENTI]
-2.5
+[RICARICHE]
+50
+100
 
-[UNICI]
-abbacchio
-barbabietola
-cedro
-datteri
-edera
-
-[CONVENIENTE]
-PIENA
+[CAFFE]
+0
 
 ######################################################################
 
 [.TEST]
-Quattro pizze uguali
+Un caffe
 
 [.ARGS]
 .FILE
 
 [.FILE]
-SETTENTRIONALE pomodoro mozzarella funghi tonno - 5'00
-MERIDIONALE tonno pomodoro mozzarella funghi - 5'00
-ORIENTALE pomodoro mozzarella funghi tonno - 5'00
-OCCIDENTALE mozzarella funghi tonno pomodoro - 5'00
+111 RICARICA 50
+222 CAFFE 50
+
+[RESIDUO]
+0
 
 [MASSIMO]
-SETTENTRIONALE 500
+50
 
-[INGREDIENTI]
-4.0
+[RICARICHE]
+50
 
-[UNICI]
-
-[CONVENIENTE]
-SETTENTRIONALE
+[CAFFE]
+1
 
 ######################################################################
 
 [.TEST]
-Numero variabile di ingredienti
+Due ricariche
 
 [.ARGS]
 .FILE
 
 [.FILE]
-VUOTA - - - - - 1'00
-SINGOLA pomodoro - - - - 2'00
-DOPPIA pomodoro mozzarella - - - 3'00
-TRIPLA pomodoro mozzarella acciughe - - 4'00
-QUADRUPLA pomodoro mozzarella acciughe capperi - 8'00
-QUINTUPLA pomodoro mozzarella acciughe capperi tonno 16'50
+111 RICARICA 100
+222 CAPPUCCINO 50
+333 RICARICA 50
+
+[RESIDUO]
+100
 
 [MASSIMO]
-QUINTUPLA 1650
+100
 
-[INGREDIENTI]
-2.5
+[RICARICHE]
+100
 
-[UNICI]
-tonno
-
-[CONVENIENTE]
-TRIPLA
+[CAFFE]
+0
 
 ######################################################################
 
 [.TEST]
-Tutti unici
+Sette eventi
 
 [.ARGS]
 .FILE
 
 [.FILE]
-A vongole salmone gamberi uovo mais 7'10
-B porchetta pancetta lardo sgombro patate 7'20
-C speck coppa fagioli radicchio asparagi 7'05
-D peperoncino mela aragosta caviale tartufo 7'50
-E panna miele cioccolato arachidi yogurt 7'40
+10000 RICARICA 100
+10010 CAPPUCCINO 40
+10100 RICARICA 50
+10200 RICARICA 50
+10300 CAFFE 60
+10400 CAFFE 60
+10500 RICARICA 100
+
+[RESIDUO]
+140
 
 [MASSIMO]
-D 750
+160
 
-[INGREDIENTI]
-5.0
+[RICARICHE]
+50
+50
 
-[UNICI]
-vongole
-salmone
-gamberi
-uovo
-mais 
-porchetta
-pancetta
-lardo
-sgombro
-patate
-speck
-coppa
-fagioli
-radicchio
-asparagi
-peperoncino
-mela
-aragosta
-caviale
-tartufo
-panna
-miele
-cioccolato
-arachidi
-yogurt
-
-[CONVENIENTE]
-C
+[CAFFE]
+2
 
 ######################################################################
 
 [.TEST]
-Pizze semplici
+Cinque caffe
 
 [.ARGS]
 .FILE
 
 [.FILE]
-CAVIALE caviale - - - - 9'10
-POMODORO pomodoro - - - - 5'20
-PEPERONI peperoni - - - - 5'30
-VONGOLE vongole - - - - 6'40
+10000 RICARICA 200
+20000 CAFFE 40
+20500 CAFFE 40
+21500 CAFFE 40
+30000 CAFFE 40
+30100 CAFFE 40
+
+[RESIDUO]
+0
 
 [MASSIMO]
-CAVIALE 910
+200
 
-[INGREDIENTI]
-1.0
+[RICARICHE]
+200
 
-[UNICI]
-caviale
-peperoni
-pomodoro
-vongole
-
-[CONVENIENTE]
-POMODORO
+[CAFFE]
+3
 
 ######################################################################
 
 [.TEST]
-10 pizze
+Tante ricariche
 
 [.ARGS]
 .FILE
 
 [.FILE]
-LUNA pomodoro mozzarella aglio - - 6'50
-CAMPAGNOLA pomodoro mozzarella origano salame - 4'00
-PRIMAVERA pomodoro mozzarella aglio pomodorini - 6'50
-PAVESE pomodoro mozzarella prosciutto porcini cozze 7'50
-PARMIGIANA pomodoro mozzarella funghi cipolla - 5'50
-PUFFO pomodoro mozzarella acciughe zucchine - 5'00
-CARBONARA pomodoro mozzarella acciughe origano - 7'50
-PARTICOLARE pomodoro mozzarella basilico carciofi pomodorini 8'00
-ROMANA pomodoro mozzarella cipolla wurstel - 7'50
-EXPRESS pomodoro mozzarella peperoni bresaola uovo 6'50
+11000 RICARICA 100
+12000 CAFFE 50
+13000 RICARICA 50
+14000 RICARICA 50
+15000 CAPPUCCINO 100
+16000 RICARICA 20
+17000 RICARICA 50
+18000 RICARICA 100
+
+[RESIDUO]
+220
 
 [MASSIMO]
-PARTICOLARE 800
+220
 
-[INGREDIENTI]
-4.2
+[RICARICHE]
+20
+50
+100
 
-[UNICI]
-salame
-prosciutto
-porcini
-cozze
-funghi
-zucchine
-basilico
-carciofi
-wurstel
-peperoni
-bresaola
-uovo
-
-[CONVENIENTE]
-CAMPAGNOLA
+[CAFFE]
+1
 
 ######################################################################
 
 [.TEST]
-13 pizze
+Tante ricariche
 
 [.ARGS]
 .FILE
 
 [.FILE]
-CARBONARA pomodoro mozzarella aglio melanzane - 5'00
-CINESE pomodoro mozzarella basilico carciofi - 7'00
-TEXANA pomodoro mozzarella peperoni lardo - 6'50
-CAPRICCIOSA mozzarella acciughe melanzane uovo - 5'00
-MILLENNIO pomodoro mozzarella basilico carciofi porcini 4'50
-PORCHETTA pomodoro mozzarella wurstel mais lardo 8'00
-MILANESE pomodoro aglio basilico pancetta - 6'50
-BERGAMASCA pomodoro mozzarella - - - 5'00
-INVERNO pomodoro mozzarella funghi salame - 7'50
-CAMPAGNOLA pomodoro mozzarella prosciutto funghi - 6'50
-PUGLIESE pomodoro mozzarella zucchine prosciutto - 7'50
-PAVESE pomodoro mozzarella acciughe origano salsiccia 9'10
-BOSCAIOLA pomodoro mozzarella cipolla - - 7'50
+11000 RICARICA 100
+12000 CAFFE 50
+13000 RICARICA 50
+14000 RICARICA 50
+15000 CAPPUCCINO 100
+16000 RICARICA 20
+17000 RICARICA 50
+18000 RICARICA 100
+
+[RESIDUO]
+220
 
 [MASSIMO]
-PAVESE 910
+220
 
-[INGREDIENTI]
-4.0
+[RICARICHE]
+20
+50
+100
 
-[UNICI]
-uovo
-porcini
-wurstel
-cipolla
-mais
-origano
-peperoni
-salame
-pancetta
-zucchine
-salsiccia
-
-[CONVENIENTE]
-MILLENNIO
+[CAFFE]
+1
 
 ######################################################################
 
@@ -286,50 +230,53 @@ Esempio nel testo
 .FILE
 
 [.FILE]
-MARGHERITA pomodoro mozzarella - - - 5'00
-MARINARA pomodoro aglio - - - 5'00
-NAPOLI pomodoro mozzarella acciughe - - 5'50
-VEGETARIANA pomodoro mozzarella peperoni melanzane zucchine 7'00
-AMERICANA pomodoro mozzarella peperoni salsiccia - 8'50
+89132840 RICARICA 50
+89132848 RICARICA 200
+89132851 MOCACCINO 50
+89240532 CAFFE 50
+89240542 CAPPUCCINO 60
+89304867 RICARICA 20
+
+[RESIDUO]
+110
 
 [MASSIMO]
-AMERICANA 850
+250
 
-[INGREDIENTI]
-3.2
+[RICARICHE]
+50
+200
 
-[UNICI]
-aglio
-acciughe
-melanzane
-zucchine
-salsiccia
-
-[CONVENIENTE]
-VEGETARIANA
+[CAFFE]
+1
 
 ######################################################################
 
 [.TEST]
-Testo distribuito all'esame
+File distribuito all'esame
 
 [.ARGS]
-menu.txt
+chiavetta.txt
+
+[RESIDUO]
+360
 
 [MASSIMO]
-MILLENNIO 900
+665
 
-[INGREDIENTI]
-4.1
+[RICARICHE]
+5
+20
+10
+20
+5
+10
+100
+20
+5
+200
 
-[UNICI]
-fagioli
-lardo
-asparagi
-caviale
-porcini
-coppa
-mela
- 
-[CONVENIENTE]
-VIENNESE
+[CAFFE]
+3
+
+######################################################################
