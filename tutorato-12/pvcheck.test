@@ -1,0 +1,335 @@
+# File di test per la prova di laboratorio del 24/7/2018 (pizzeria).
+
+[.SECTIONS]
+UNICI unordered
+
+
+######################################################################
+
+[.TEST]
+Solo una pizza
+
+[.ARGS]
+.FILE
+
+[.FILE]
+MARGHERITA pomodoro mozzarella - - - 99'99
+
+[MASSIMO]
+MARGHERITA 9999
+
+[INGREDIENTI]
+2.0
+
+[UNICI]
+pomodoro
+mozzarella
+
+[CONVENIENTE]
+MARGHERITA
+
+######################################################################
+
+[.TEST]
+Due pizze
+
+[.ARGS]
+.FILE
+
+[.FILE]
+VUOTA - - - - - 0'01
+PIENA abbacchio barbabietola cedro datteri edera 10'00
+
+[MASSIMO]
+PIENA 1000
+
+[INGREDIENTI]
+2.5
+
+[UNICI]
+abbacchio
+barbabietola
+cedro
+datteri
+edera
+
+[CONVENIENTE]
+PIENA
+
+######################################################################
+
+[.TEST]
+Quattro pizze uguali
+
+[.ARGS]
+.FILE
+
+[.FILE]
+SETTENTRIONALE pomodoro mozzarella funghi tonno - 5'00
+MERIDIONALE tonno pomodoro mozzarella funghi - 5'00
+ORIENTALE pomodoro mozzarella funghi tonno - 5'00
+OCCIDENTALE mozzarella funghi tonno pomodoro - 5'00
+
+[MASSIMO]
+SETTENTRIONALE 500
+
+[INGREDIENTI]
+4.0
+
+[UNICI]
+
+[CONVENIENTE]
+SETTENTRIONALE
+
+######################################################################
+
+[.TEST]
+Numero variabile di ingredienti
+
+[.ARGS]
+.FILE
+
+[.FILE]
+VUOTA - - - - - 1'00
+SINGOLA pomodoro - - - - 2'00
+DOPPIA pomodoro mozzarella - - - 3'00
+TRIPLA pomodoro mozzarella acciughe - - 4'00
+QUADRUPLA pomodoro mozzarella acciughe capperi - 8'00
+QUINTUPLA pomodoro mozzarella acciughe capperi tonno 16'50
+
+[MASSIMO]
+QUINTUPLA 1650
+
+[INGREDIENTI]
+2.5
+
+[UNICI]
+tonno
+
+[CONVENIENTE]
+TRIPLA
+
+######################################################################
+
+[.TEST]
+Tutti unici
+
+[.ARGS]
+.FILE
+
+[.FILE]
+A vongole salmone gamberi uovo mais 7'10
+B porchetta pancetta lardo sgombro patate 7'20
+C speck coppa fagioli radicchio asparagi 7'05
+D peperoncino mela aragosta caviale tartufo 7'50
+E panna miele cioccolato arachidi yogurt 7'40
+
+[MASSIMO]
+D 750
+
+[INGREDIENTI]
+5.0
+
+[UNICI]
+vongole
+salmone
+gamberi
+uovo
+mais 
+porchetta
+pancetta
+lardo
+sgombro
+patate
+speck
+coppa
+fagioli
+radicchio
+asparagi
+peperoncino
+mela
+aragosta
+caviale
+tartufo
+panna
+miele
+cioccolato
+arachidi
+yogurt
+
+[CONVENIENTE]
+C
+
+######################################################################
+
+[.TEST]
+Pizze semplici
+
+[.ARGS]
+.FILE
+
+[.FILE]
+CAVIALE caviale - - - - 9'10
+POMODORO pomodoro - - - - 5'20
+PEPERONI peperoni - - - - 5'30
+VONGOLE vongole - - - - 6'40
+
+[MASSIMO]
+CAVIALE 910
+
+[INGREDIENTI]
+1.0
+
+[UNICI]
+caviale
+peperoni
+pomodoro
+vongole
+
+[CONVENIENTE]
+POMODORO
+
+######################################################################
+
+[.TEST]
+10 pizze
+
+[.ARGS]
+.FILE
+
+[.FILE]
+LUNA pomodoro mozzarella aglio - - 6'50
+CAMPAGNOLA pomodoro mozzarella origano salame - 4'00
+PRIMAVERA pomodoro mozzarella aglio pomodorini - 6'50
+PAVESE pomodoro mozzarella prosciutto porcini cozze 7'50
+PARMIGIANA pomodoro mozzarella funghi cipolla - 5'50
+PUFFO pomodoro mozzarella acciughe zucchine - 5'00
+CARBONARA pomodoro mozzarella acciughe origano - 7'50
+PARTICOLARE pomodoro mozzarella basilico carciofi pomodorini 8'00
+ROMANA pomodoro mozzarella cipolla wurstel - 7'50
+EXPRESS pomodoro mozzarella peperoni bresaola uovo 6'50
+
+[MASSIMO]
+PARTICOLARE 800
+
+[INGREDIENTI]
+4.2
+
+[UNICI]
+salame
+prosciutto
+porcini
+cozze
+funghi
+zucchine
+basilico
+carciofi
+wurstel
+peperoni
+bresaola
+uovo
+
+[CONVENIENTE]
+CAMPAGNOLA
+
+######################################################################
+
+[.TEST]
+13 pizze
+
+[.ARGS]
+.FILE
+
+[.FILE]
+CARBONARA pomodoro mozzarella aglio melanzane - 5'00
+CINESE pomodoro mozzarella basilico carciofi - 7'00
+TEXANA pomodoro mozzarella peperoni lardo - 6'50
+CAPRICCIOSA mozzarella acciughe melanzane uovo - 5'00
+MILLENNIO pomodoro mozzarella basilico carciofi porcini 4'50
+PORCHETTA pomodoro mozzarella wurstel mais lardo 8'00
+MILANESE pomodoro aglio basilico pancetta - 6'50
+BERGAMASCA pomodoro mozzarella - - - 5'00
+INVERNO pomodoro mozzarella funghi salame - 7'50
+CAMPAGNOLA pomodoro mozzarella prosciutto funghi - 6'50
+PUGLIESE pomodoro mozzarella zucchine prosciutto - 7'50
+PAVESE pomodoro mozzarella acciughe origano salsiccia 9'10
+BOSCAIOLA pomodoro mozzarella cipolla - - 7'50
+
+[MASSIMO]
+PAVESE 910
+
+[INGREDIENTI]
+4.0
+
+[UNICI]
+uovo
+porcini
+wurstel
+cipolla
+mais
+origano
+peperoni
+salame
+pancetta
+zucchine
+salsiccia
+
+[CONVENIENTE]
+MILLENNIO
+
+######################################################################
+
+[.TEST]
+Esempio nel testo
+
+[.ARGS]
+.FILE
+
+[.FILE]
+MARGHERITA pomodoro mozzarella - - - 5'00
+MARINARA pomodoro aglio - - - 5'00
+NAPOLI pomodoro mozzarella acciughe - - 5'50
+VEGETARIANA pomodoro mozzarella peperoni melanzane zucchine 7'00
+AMERICANA pomodoro mozzarella peperoni salsiccia - 8'50
+
+[MASSIMO]
+AMERICANA 850
+
+[INGREDIENTI]
+3.2
+
+[UNICI]
+aglio
+acciughe
+melanzane
+zucchine
+salsiccia
+
+[CONVENIENTE]
+VEGETARIANA
+
+######################################################################
+
+[.TEST]
+Testo distribuito all'esame
+
+[.ARGS]
+menu.txt
+
+[MASSIMO]
+MILLENNIO 900
+
+[INGREDIENTI]
+4.1
+
+[UNICI]
+fagioli
+lardo
+asparagi
+caviale
+porcini
+coppa
+mela
+ 
+[CONVENIENTE]
+VIENNESE

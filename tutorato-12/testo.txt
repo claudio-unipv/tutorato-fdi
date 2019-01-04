@@ -1,0 +1,70 @@
+PREPARAZIONE ALL'ESAME
+======================
+
+Svolgilmento del tema d'esame del 24/7/2018
+-------------------------------------------
+
+Una pizzeria archivia il proprio menu in un file di testo.  Per
+ciascuna pizza vengono memorizzati il nome, l'elenco degli ingredienti
+ed il prezzo.  Più in dettaglio, ciascuna riga del file riporta come
+campi separati da caratteri di spaziatura, le informazioni relative ad
+una pizza:
+
+- il nome (una sequenza di caratteri alfabetici);
+
+- l'elenco degli ingredienti (5 sequenza di caratteri alfabetici);
+
+- il prezzo in euro nel formato E'CC dove E indica la parte intera e
+  CC la parte in centesimi.
+
+La lunghezza dei nomi delle pizze e degli ingredienti non supera mai i
+20 caratteri di lunghezza.  La pizzeria garantisce che non ci sono mai
+più di 80 pizze nel menu.  Inoltre, ciascuna pizza è composta al
+massimo da 5 ingredienti (senza ripetizioni, inoltre per le pizze con
+un numero inferiore di ingredienti vengono riportati dei trattini '-'
+in coda all'elenco al posto degli ingredienti mancanti).
+
+Ad esempio, un file valido potrebbe essere il seguente:
+
+  MARGHERITA pomodoro mozzarella - - - 5'00
+  MARINARA pomodoro aglio - - - 5'00
+  NAPOLI pomodoro mozzarella acciughe - - 5'50
+  VEGETARIANA pomodoro mozzarella peperoni melanzane zucchine 7'00
+  AMERICANA pomodoro mozzarella peperoni salsiccia - 8'50
+
+Si scriva un programma in linguaggio C che, DATO IL NOME DEL FILE COME
+ARGOMENTO DALLA RIGA DI COMANDO, ne legga il contenuto e calcoli le
+risposte alle domande che seguono.  La risposta a ciascuna domanda
+deve essere stampata a terminale secondo il formato indicato,
+preceduta da un identificatore specifico racchiuso tra parentesi
+quadre.
+
+1) Determinare la pizza che costa più (in caso di parità, scegliere
+   quella che compare per prima nel file) e riportarne nome N e prezzo
+   C in centesimi di euro:
+
+  [MASSIMO]  
+  N C
+
+2) Determinare il numero medio M di ingredienti per pizza e riportarlo
+   nel formato:
+
+  [INGREDIENTI]
+  M
+
+3) Individuare l'elenco degli ingredienti che compaiono una sola volta
+   nel menu.  Riportarne i nomi I1, ..., Ik in un ordine qualsiasi:
+
+  [UNICI]
+  I1
+  I2
+  ...
+  Ik
+
+4) Determinare la pizza con il più basso costo per ingrediente
+   (rapporto tra prezzo e numero di ingredienti).  In caso di parità
+   scegliere la pizza che compara per prima nel file.  Riportarne il
+   nome C come segue:
+
+  [CONVENIENTE]
+  C
